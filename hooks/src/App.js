@@ -1,29 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
-
-import "./App.css";
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./home";
+import State from "./page/state";
 
 //https://ko.reactjs.org/docs/hooks-overview.html 참조
 
-const useBeforeLeave = (onBefore) => {
-  if (typeof onBefore !== "function") {
-    return;
-  }
-  const handle = () => {
-    console.log("leaving");
-  };
-  useEffect(() => {
-    document.addEventListener("mouseleave", handle);
-    return () => document.removeEventListener("mouseleave", handle);
-  }, []);
-};
-
 const App = () => {
-  const { enablePrevent, disablePrevent } = usePreventLeave();
   return (
-    <div className="App">
-      <button onClick={enablePrevent}>Protect</button>
-      <button onClick={disablePrevent}>Unprotect</button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/useState" element={<State />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
@@ -247,8 +236,35 @@ const App = () => {
   );
 };
 
-// 이 외
+// 9. useBeforeLeave
 // useBeforeLeave -> 페이지를 떠날 때 실행되는 function
+
+//https://ko.reactjs.org/docs/hooks-overview.html 참조
+
+const useBeforeLeave = (onBefore) => {
+  if (typeof onBefore !== "function") {
+    return;
+  }
+  const handle = () => {
+    console.log("leaving");
+  };
+  useEffect(() => {
+    document.addEventListener("mouseleave", handle);
+    return () => document.removeEventListener("mouseleave", handle);
+  }, []);
+};
+
+const App = () => {
+  const { enablePrevent, disablePrevent } = usePreventLeave();
+  return (
+    <div className="App">
+      <button onClick={enablePrevent}>Protect</button>
+      <button onClick={disablePrevent}>Unprotect</button>
+    </div>
+  );
+};
+
+// 이 외
 // useFadeIn -> 자동으로 서서히 나타나게 하는 function! CSS로도 가능하지만, animation을 Hook에 포함시킬 수 있음
 // useNetwork -> navigator가 online 또는 offline이 되는 걸 막아줌. 네트워크가 바뀔 때마다 발생하는 이벤트
 // useScroll -> 유저가 스크롤해서 무언가 지나갔을 때 발생하는 액션!!
