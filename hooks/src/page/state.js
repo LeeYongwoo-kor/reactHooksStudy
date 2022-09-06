@@ -5,7 +5,7 @@ const callBaseballPlayer = () => {
 };
 
 const State = () => {
-  const [names, setNames] = useState(() => callBaseballPlayer);
+  const [names, setNames] = useState(() => callBaseballPlayer());
   const [inputText, setInputText] = useState("");
 
   const handleInputChange = (e) => {
@@ -13,13 +13,16 @@ const State = () => {
   };
 
   const handleUplaod = () => {
-    setNames((prevState) => [inputText, ...prevState]);
+    setNames((prevState) => {
+      console.log(prevState);
+      return [inputText, ...prevState];
+    });
   };
 
   return (
     <div>
       <input text="" value={inputText} onChange={handleInputChange} />
-      <button onClick={prevState}>Upload</button>
+      <button onClick={handleUplaod}>Upload</button>
       {names.map((name, idx) => {
         return <li key={idx}>{name}</li>;
       })}
