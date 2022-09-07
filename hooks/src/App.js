@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home";
 import State from "./page/state";
+import Effect from "./page/effect";
 
 //https://ko.reactjs.org/docs/hooks-overview.html 참조
 
 const App = () => {
+  const [showTImer, setShowTimer] = useState(false);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/useState" element={<State />} />
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/useState" element={<State />} />
+          {showTImer && <Route path="/useState" element={<Effect />} />}
+          <button onClick={() => setShowTimer(!showTImer)}>Toggle</button>
+        </>
       </Routes>
     </BrowserRouter>
   );
