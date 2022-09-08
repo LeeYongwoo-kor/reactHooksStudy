@@ -3,24 +3,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home";
 import State from "./page/state";
 import Effect from "./page/effect";
+import Ref from "./page/ref";
 
 //https://ko.reactjs.org/docs/hooks-overview.html 참조
 
 const App = () => {
-  const [showTimer, setShowTimer] = useState(false);
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/useState" element={<State />} />
-        </Routes>
-        {showTimer && <Effect />}
-      </BrowserRouter>
-      <button onClick={() => setShowTimer(!showTimer)}>
-        {showTimer ? "useEffect OFF" : "useEffect ON"}
-      </button>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/useState" element={<State />} />
+        <Route path="/useRef" element={<Ref />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
