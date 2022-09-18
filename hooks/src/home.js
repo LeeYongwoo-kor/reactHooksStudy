@@ -8,6 +8,7 @@ const Home = () => {
     <div className="block">
       <Link to="/useState">useState</Link>
       <Link to="/useRef">useRef</Link>
+      <Link to="/useMemo">useMemo</Link>
       {showTimer && <Effect />}
       <button onClick={() => setShowTimer(!showTimer)}>
         {showTimer ? "useEffect OFF" : "useEffect ON"}

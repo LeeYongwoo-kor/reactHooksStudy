@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home";
-import State from "./page/state";
-import Effect from "./page/effect";
+import Memo from "./page/memo";
 import Ref from "./page/ref";
+import State from "./page/state";
 
 //https://ko.reactjs.org/docs/hooks-overview.html 참조
 
@@ -14,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/useState" element={<State />} />
         <Route path="/useRef" element={<Ref />} />
+        <Route path="/useMemo" element={<Memo />} />
       </Routes>
     </BrowserRouter>
   );
