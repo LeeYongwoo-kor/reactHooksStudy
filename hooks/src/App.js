@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home";
+import Callback from "./page/callback";
 import Memo from "./page/memo";
 import Ref from "./page/ref";
 import State from "./page/state";
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/useState" element={<State />} />
         <Route path="/useRef" element={<Ref />} />
         <Route path="/useMemo" element={<Memo />} />
+        <Route path="/useCallback" element={<Callback />} />
       </Routes>
     </BrowserRouter>
   );
