@@ -12,6 +12,7 @@ const Home = () => {
       <Link to="/useCallback">useCallback</Link>
       <Link to="/reactMemo">reactMemo</Link>
       <Link to="/useContext">useContext</Link>
+      <Link to="/useReducer">useReducer</Link>
       {showTimer && <Effect />}
       <button onClick={() => setShowTimer(!showTimer)}>
         {showTimer ? "useEffect OFF" : "useEffect ON"}
