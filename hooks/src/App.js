@@ -8,6 +8,7 @@ import ReactMemo from "./page/react-memo";
 import Ref from "./page/ref";
 import State from "./page/state";
 import Reducer from "./page/reducer";
+import Mistakes from "./page/mitakesBeginnersMake";
 
 //https://ko.reactjs.org/docs/hooks-overview.html 참조
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/useContext" element={<Main />} />
         <Route path="/useReducer" element={<Reducer />} />
         <Route path="/reactMemo" element={<ReactMemo />} />
+        <Route path="/mistakes1" element={<Mistakes />} />
       </Routes>
     </BrowserRouter>
   );

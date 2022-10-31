@@ -13,6 +13,22 @@ const Home = () => {
       <Link to="/reactMemo">reactMemo</Link>
       <Link to="/useContext">useContext</Link>
       <Link to="/useReducer">useReducer</Link>
+      <hr />
+      <div>
+        <h3>Top 6 React Hook Mistakes Beginners Make</h3>
+        <span>
+          <a
+            href="https://youtube.com/watch?v=GGo3MVBFr1A&t=896s"
+            target="_blank"
+          >
+            (Source)
+          </a>
+        </span>
+        <div>
+          <Link to="/mistakes1">mistakes Chapter 1</Link>
+        </div>
+      </div>
+      <Link to="/useReducer">useReducer</Link>
       {showTimer && <Effect />}
       <button onClick={() => setShowTimer(!showTimer)}>
         {showTimer ? "useEffect OFF" : "useEffect ON"}
