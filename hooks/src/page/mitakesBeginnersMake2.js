@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 2. Not using the function version of useState
+// 3. State does not update immediately!
 export function Mistakes2() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(count);
+  }, [count]);
 
   function adjustCount(amount) {
     setCount((currentCount) => {
