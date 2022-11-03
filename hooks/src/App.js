@@ -10,6 +10,7 @@ import State from "./page/state";
 import Reducer from "./page/reducer";
 import Mistakes from "./page/mitakesBeginnersMake";
 import { Mistakes2 } from "./page/mitakesBeginnersMake2";
+import { Mistakes3 } from "./page/mitakesBeginnersMake3";
 
 //https://ko.reactjs.org/docs/hooks-overview.html 참조
 
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/reactMemo" element={<ReactMemo />} />
         <Route path="/mistakes1" element={<Mistakes />} />
         <Route path="/mistakes2" element={<Mistakes2 />} />
+        <Route path="/mistakes3" element={<Mistakes3 />} />
       </Routes>
     </BrowserRouter>
   );
