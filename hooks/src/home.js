@@ -4,6 +4,7 @@ import Effect from "./page/effect";
 
 const Home = () => {
   const [showTimer, setShowTimer] = useState(false);
+  const [number, setNumber] = useState(1);
   return (
     <div className="block">
       <Link to="/useState">useState</Link>
@@ -29,6 +30,14 @@ const Home = () => {
           <Link to="/mistakes2">mistakes Chapter 2</Link>
           <Link to="/mistakes3">mistakes Chapter 3</Link>
           <Link to="/mistakes4">mistakes Chapter 4</Link>
+          <input
+            type="number"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+          />
+          <Link to="/mistakes5" state={number}>
+            mistakes Chapter 5
+          </Link>
         </div>
       </div>
       <Link to="/useReducer">useReducer</Link>

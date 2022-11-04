@@ -8,6 +8,7 @@ import Mistakes from "./page/mitakesBeginnersMake";
 import { Mistakes2 } from "./page/mitakesBeginnersMake2";
 import { Mistakes3 } from "./page/mitakesBeginnersMake3";
 import { Mistakes4 } from "./page/mitakesBeginnersMake4";
+import { Mistakes5 } from "./page/mitakesBeginnersMake5";
 import ReactMemo from "./page/react-memo";
 import Reducer from "./page/reducer";
 import Ref from "./page/ref";
@@ -31,6 +32,8 @@ const App = () => {
         <Route path="/mistakes2" element={<Mistakes2 />} />
         <Route path="/mistakes3" element={<Mistakes3 />} />
         <Route path="/mistakes4" element={<Mistakes4 />} />
+        <Route path="/mistakes5" element={<Mistakes5 />} />
+        <Route path="/mistakes5/:num" element={<Mistakes5 />} />
       </Routes>
     </BrowserRouter>
   );
