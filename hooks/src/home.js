@@ -28,6 +28,7 @@ const Home = () => {
           <Link to="/mistakes1">mistakes Chapter 1</Link>
           <Link to="/mistakes2">mistakes Chapter 2</Link>
           <Link to="/mistakes3">mistakes Chapter 3</Link>
+          <Link to="/mistakes4">mistakes Chapter 4</Link>
         </div>
       </div>
       <Link to="/useReducer">useReducer</Link>
